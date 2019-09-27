@@ -66,6 +66,10 @@ class TestMathLibStdev(unittest.TestCase):
         r = math_lib.list_stdev([])
         self.assertEqual(r, None)
 
+    def test_list_stdev_constants(self):
+        """test for stdev of constant list"""
+        r = math_lib.list_stdev([1, 1, 1, 1])
+        self.assertEqual(r, 0)
 
 if __name__ == '__main__':
     unittest.main()
