@@ -10,7 +10,12 @@ before_install:
     - conda activate test
     - conda install -y pycodestyle
     - conda install --yes python=3.6
-      
+    - conda install --yes numpy
+    - conda install --yes matplotlib
+
 script:
-    - bash test_viz.sh
-    - python test_viz.py
+    - chmod +x gen_data.sh
+    - python test_math_lib.py
+    - ./gen_data.sh | python test_data_viz_hist.py
+    - ./gen_data.sh | python test_data_viz_box.py
+    - ./gen_data.sh | python test_data_viz_combo.py
