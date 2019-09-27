@@ -12,6 +12,12 @@ class TestMathLib(unittest.TestCase):
         r = math_lib.list_mean(None)
         self.assertEqual(r,None)
 
+
+    def test_list_mean_empty_list(self):
+        """test for if list_mean is passed empty list"""
+        r = math_lib.list_mean([])
+        self.assertEqual(r,None)
+        
         
 if __name__ == '__main__':
     unittest.main()
