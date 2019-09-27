@@ -5,8 +5,8 @@ import statistics as stat
 import math as m
 
 
-class TestMathLib(unittest.TestCase):
-    """tests of the module math lib"""
+class TestMathLibMean(unittest.TestCase):
+    """tests of the mean ftn in module math lib"""
     def test_list_mean_none(self):
         """test for if list_mean is passed None"""
         r = math_lib.list_mean(None)
@@ -51,6 +51,15 @@ class TestMathLib(unittest.TestCase):
 
         with self.assertRaises(ValueError) as ex:
             math_lib.list_mean(L)
+
+
+class TestMathLibStdev(unittest.TestCase):
+    """tests of the stdev ftn in module math lib"""
+
+    def test_list_stdev_none(self):
+        """test for if list_std is passed None"""
+        r = math_lib.list_stdev(None)
+        self.assertEqual(r, None)
 
 
 if __name__ == '__main__':
