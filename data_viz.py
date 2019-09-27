@@ -51,6 +51,9 @@ def combo(L, out_file_name):
     ax0.set_ylabel('Frequency')
 
     fig_c.tight_layout()
+    mean = math_lib.list_mean(L)
+    stdev = math_lib.list_stdev(L)
+    fig_c.suptitle('mean=%s, stdev=%s' % (mean, stdev))
     fig_c.savefig(out_file_name, bbox_inches='tight')
     plt.close()
 
