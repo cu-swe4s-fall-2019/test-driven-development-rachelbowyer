@@ -71,5 +71,16 @@ class TestMathLibStdev(unittest.TestCase):
         r = math_lib.list_stdev([1, 1, 1, 1])
         self.assertEqual(r, 0)
 
+    def test_list_stdev_rand_ints(self):
+        """test for stdev of int list"""
+        L = []
+        for i in range(100):
+            for j in range(10):
+                L.append(random.randint(0, 100))
+            r = math_lib.list_stdev(L)
+            e = stat.stdev(L)
+            self.assertTrue(m.isclose(r, e))
+
+
 if __name__ == '__main__':
     unittest.main()
