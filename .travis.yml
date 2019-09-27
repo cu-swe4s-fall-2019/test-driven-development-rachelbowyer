@@ -12,5 +12,8 @@ before_install:
     - conda install --yes python=3.6
       
 script:
-    - bash test_viz.sh
-    - python test_viz.py
+    - chmod +x gen_data.sha
+    - python test_math_lib.py
+    - ./gen_data.sh | test_data_viz_hist.py
+    - ./gen_data.sh | test_data_viz_box.py
+    - ./gen_data.sh | test_data_viz_combo.py
