@@ -57,8 +57,13 @@ class TestMathLibStdev(unittest.TestCase):
     """tests of the stdev ftn in module math lib"""
 
     def test_list_stdev_none(self):
-        """test for if list_std is passed None"""
+        """test for if list_stdev is passed None"""
         r = math_lib.list_stdev(None)
+        self.assertEqual(r, None)
+
+    def test_list_stdev_empty_list(self):
+        """test for if list_stdev is passed empty list"""
+        r = math_lib.list_stdev([])
         self.assertEqual(r, None)
 
 
