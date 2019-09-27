@@ -37,7 +37,11 @@ def list_stdev(L):
     
     sd = 0
     for num in L:
-        sd += (num-mean)**2
+        try:
+            sd += (num-mean)**2
+    
+        except Exception:
+            raise ValueError('Unsupported value in list')
     sd = np.sqrt(sd/(len(L)-1))
     
     return sd
