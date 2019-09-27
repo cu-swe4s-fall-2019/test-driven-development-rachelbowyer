@@ -10,7 +10,8 @@ before_install:
     - conda activate test
     - conda install -y pycodestyle
     - conda install --yes python=3.6
-      
+    - conda install --yes numpy
+
 script:
     - chmod +x gen_data.sh
     - python test_math_lib.py
