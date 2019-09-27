@@ -15,6 +15,6 @@ before_install:
 script:
     - chmod +x gen_data.sh
     - python test_math_lib.py
-    - ./gen_data.sh | test_data_viz_hist.py
-    - ./gen_data.sh | test_data_viz_box.py
-    - ./gen_data.sh | test_data_viz_combo.py
+    - bash gen_data.sh | test_data_viz_hist.py
+    - bash gen_data.sh | test_data_viz_box.py
+    - bash gen_data.sh | test_data_viz_combo.py
