@@ -25,5 +25,16 @@ class TestMathLib(unittest.TestCase):
         self.assertEqual(r, 1)
 
 
+    def test_list_mean_rand_ints(self):
+        """test for mean of int list"""
+        L = []
+        for i in range(100):
+            for j in range(10):
+                L.append(random.randint(0,100))
+            r = math_lib.list_mean(L)
+            e = stat.mean(L)
+            self.assertEqual(r,e)
+
+
 if __name__ == '__main__':
     unittest.main()
